@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="weight" placeholder="(kg)">Weight<br><br>
+    <input type="text" id="height" placeholder="(m)">Height<br><br>
+    <button onclick="run()">Run</button>
+    <br>
+    <p id="bmi"></p>
+</body>
+
+</html>
+<script>
+    function run() {
+        let w = parseInt(document.getElementById('weight').value);
+        let h = parseFloat(document.getElementById('height').value);
+        let bmi = w / (h * h);
+        document.getElementById('bmi').innerHTML = 'BMI: ' + bmi;
+
+        if (bmi > 0) {
+            bmi < 18.5 ? alert('Underweight!!') :
+                bmi < 25 ? alert('Normal!') :
+                bmi < 30 ? alert('Overweight') :
+                bmi >= 30 ? alert('Obese') : alert("invalid input!");
+        }
+    }
+</script>
